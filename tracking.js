@@ -19,7 +19,7 @@ if (!url) {
 if (button && call_type && url) {
   document
     .querySelectorAll(button)
-    .forEach((e) => e.addEventListener("click", schedule(call_type)));
+    .forEach((e) => e.addEventListener("click", schedule));
 
   //Set Agent Cookie
   const urlParams = new URLSearchParams(window.location.search);
