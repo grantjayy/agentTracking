@@ -2,7 +2,7 @@
 //TODO: Add this as a callable from CDN. Import then set variable call_type to the call type
 var call_type;
 var button = ".button-42";
-var url = "http://app.maximentoring.com";
+var url = "http://app.maximentoring.com/schedule";
 
 if (!button) {
   alert(`Please set the button class value\n (i.e. var button="button42")`);
@@ -33,8 +33,10 @@ if (button && call_type && url) {
     const call_param = "ct=" + call_type;
     let agent = document.cookie
       .split("; ")
-      .find((row) => row.startsWith("agent"))
-      .split("=")[1];
+      .find((row) => row.startsWith("agent"));
+    if (agent) {
+      agent = agent.split("=")[1];
+    }
 
     if (agent) {
       url += `?a=${agent}&${call_param}`;
