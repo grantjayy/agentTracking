@@ -29,7 +29,7 @@ if (button && call_type && url) {
   }
 
   //Schedule Call Function
-  function schedule(obj, call_type) {
+  function schedule(obj) {
     const call_param = "ct=" + call_type;
     let agent = document.cookie
       .split("; ")
