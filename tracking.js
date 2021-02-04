@@ -1,6 +1,5 @@
 var call_type;
 var url = "http://app.maximentoring.com/schedule";
-var deleteme;
 
 if (!button) {
   var button = ".button-42";
