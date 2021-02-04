@@ -4,11 +4,6 @@ var url = "http://app.maximentoring.com/schedule";
 if (!button) {
   var button = ".button-42";
 }
-if (!call_type) {
-  alert(
-    `Please set the call type value\n (i.e. var call_type="ask")\nOptions are: "ask", "free", "bonus"`
-  );
-}
 
 function set_tracking_cookie(queryParam, value) {
   if (value) {
