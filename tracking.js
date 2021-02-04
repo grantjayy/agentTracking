@@ -28,8 +28,8 @@ function getParameterByName(name) {
 
 function get_tracking_cookies() {
   let params = new URLSearchParams({});
-  if (Cookies.get("agent")) {
-    params.append("agent", Cookies.get("agent"));
+  if (Cookies.get("a")) {
+    params.append("a", Cookies.get("a"));
   }
   if (Cookies.get("utm_source")) {
     params.append("utm_source", Cookies.get("utm_source"));
@@ -75,7 +75,7 @@ $().ready(function () {
   var name = getParameterByName("name");
   var phone = getParameterByName("phone");
 
-  set_tracking_cookie("agent", agent);
+  set_tracking_cookie("a", agent);
   set_tracking_cookie("utm_source", source);
   set_tracking_cookie("utm_medium", medium);
   set_tracking_cookie("utm_campaign", campaign);
