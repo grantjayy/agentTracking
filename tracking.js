@@ -5,9 +5,6 @@ if (!button) {
   var button = ".button-42";
 }
 
-function notReal() {
-  console.log("yes");
-}
 function set_tracking_cookie(queryParam, value) {
   if (value) {
     if (
@@ -68,7 +65,6 @@ function schedule(obj) {
 }
 
 $().ready(function () {
-  notReal();
   var agent = getParameterByName("a");
   var source = getParameterByName("utm_source");
   var medium = getParameterByName("utm_medium");
