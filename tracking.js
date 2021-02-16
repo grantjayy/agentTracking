@@ -1,5 +1,5 @@
 var call_type;
-var url = "http://app.maximentoring.com/schedule";
+var url = "https://app.maximentoring.com/schedule";
 
 if (!button) {
   var button = ".button-42";
@@ -8,7 +8,7 @@ if (!button) {
 const send_ajax = (message) => {
   $.ajax({
     type: "POST",
-    url: "http://app.maximentoring.com/ajax/",
+    url: "https://app.maximentoring.com/ajax/",
     data: JSON.stringify({ message: message }),
     dataType: "text",
     contentType: "application/json; charset=utf-8",
@@ -25,7 +25,7 @@ const landing_trackng = () => {
 
   $.ajax({
     type: "POST",
-    url: "http://app.maximentoring.com/page-land/",
+    url: "https://app.maximentoring.com/page-land/",
     data: JSON.stringify({ data: data }),
     dataType: "text",
     contentType: "application/json; charset=utf-8",
