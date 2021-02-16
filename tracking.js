@@ -5,6 +5,22 @@ if (!button) {
   var button = ".button-42";
 }
 
+const landing_trackng = () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  let data = {};
+  urlParams.forEach((value, key) => (data[key] = value));
+
+  $.ajax({
+    type: "POST",
+    url: "http://app.maximentoring.com/page-land/",
+    data: JSON.stringify({ data: data }),
+    dataType: "text",
+    contentType: "application/json; charset=utf-8",
+  });
+};
+
 function set_tracking_cookie(queryParam, value) {
   if (value) {
     if (
@@ -65,6 +81,7 @@ function schedule(obj) {
 }
 
 $().ready(function () {
+  landing_trackng();
   var agent = getParameterByName("a");
   var source = getParameterByName("utm_source");
   var medium = getParameterByName("utm_medium");
