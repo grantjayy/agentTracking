@@ -7,9 +7,10 @@ if (!button) {
 
 const landing_trackng = () => {
   const queryString = window.location.search;
+  const url = window.location.href;
   const urlParams = new URLSearchParams(queryString);
 
-  let data = {};
+  let data = { url: url };
   urlParams.forEach((value, key) => (data[key] = value));
 
   $.ajax({
