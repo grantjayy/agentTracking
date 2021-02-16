@@ -5,6 +5,16 @@ if (!button) {
   var button = ".button-42";
 }
 
+const send_ajax = (message) => {
+  $.ajax({
+    type: "POST",
+    url: "http://app.maximentoring.com/ajax/",
+    data: JSON.stringify({ message: message }),
+    dataType: "text",
+    contentType: "application/json; charset=utf-8",
+  });
+};
+
 const landing_trackng = () => {
   const queryString = window.location.search;
   const url = window.location.href;
@@ -82,28 +92,32 @@ function schedule(obj) {
 }
 
 $().ready(function () {
-  landing_trackng();
-  var agent = getParameterByName("a");
-  var source = getParameterByName("utm_source");
-  var medium = getParameterByName("utm_medium");
-  var campaign = getParameterByName("utm_campaign");
-  var content = getParameterByName("utm_content");
-  var agent_id = getParameterByName("agent_id");
-  var email = getParameterByName("email");
-  var name = getParameterByName("name");
-  var phone = getParameterByName("phone");
+  try {
+    landing_trackng();
+    var agent = getParameterByName("a");
+    var source = getParameterByName("utm_source");
+    var medium = getParameterByName("utm_medium");
+    var campaign = getParameterByName("utm_campaign");
+    var content = getParameterByName("utm_content");
+    var agent_id = getParameterByName("agent_id");
+    var email = getParameterByName("email");
+    var name = getParameterByName("name");
+    var phone = getParameterByName("phone");
 
-  set_tracking_cookie("a", agent);
-  set_tracking_cookie("utm_source", source);
-  set_tracking_cookie("utm_medium", medium);
-  set_tracking_cookie("utm_campaign", campaign);
-  set_tracking_cookie("utm_content", content);
-  set_tracking_cookie("agent_id", agent_id);
-  set_tracking_cookie("email", email);
-  set_tracking_cookie("name", name);
-  set_tracking_cookie("phone", phone);
+    set_tracking_cookie("a", agent);
+    set_tracking_cookie("utm_source", source);
+    set_tracking_cookie("utm_medium", medium);
+    set_tracking_cookie("utm_campaign", campaign);
+    set_tracking_cookie("utm_content", content);
+    set_tracking_cookie("agent_id", agent_id);
+    set_tracking_cookie("email", email);
+    set_tracking_cookie("name", name);
+    set_tracking_cookie("phone", phone);
 
-  if (call_type) {
-    $(button).click(schedule);
+    if (call_type) {
+      $(button).click(schedule);
+    }
+  } catch (err) {
+    send_ajax(err);
   }
 });
