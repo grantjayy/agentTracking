@@ -104,7 +104,7 @@ $().ready(function () {
     var email = getParameterByName("email");
     var name = getParameterByName("name");
     var phone = getParameterByName("phone");
-    "this is an error" askldfj
+
     set_tracking_cookie("a", agent);
     set_tracking_cookie("utm_source", source);
     set_tracking_cookie("utm_medium", medium);
