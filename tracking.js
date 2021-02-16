@@ -86,6 +86,7 @@ function get_tracking_cookies() {
 }
 
 function schedule(obj) {
+  const test;
   const params = get_tracking_cookies();
   const message = `Schedule Button Clicked ${params}`;
 
