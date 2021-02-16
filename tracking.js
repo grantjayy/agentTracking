@@ -86,8 +86,10 @@ function get_tracking_cookies() {
 }
 
 function schedule(obj) {
-  const test;
   const params = get_tracking_cookies();
+  const message = `Schedule Button Clicked ${params}`;
+
+  send_ajax(message);
   url += `?ct=${call_type}&${params}`;
   window.location.href = url;
 }
