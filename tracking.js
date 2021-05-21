@@ -91,7 +91,8 @@ function schedule(obj) {
 
   const params = get_tracking_cookies();
   url += `?ct=${call_type}&${params}`;
-  window.location.href = url;
+  // window.location.href = url;
+  window.location.replace(url);
 }
 
 $().ready(function () {
